@@ -10,8 +10,10 @@ let options = {
     json: true
 };
 
+const BASE_URL = 'https://pro-api.coinmarketcap.com/v1/cryptocurrency/'
+
 router.get('/list', function (req, res) {
-    options.uri = 'https://pro-api.coinmarketcap.com/v1/cryptocurrency/listings/latest';
+    options.uri = BASE_URL + 'listings/latest';
     request(options).then(response => {
         let result = [];
         response.data.forEach(coin => {
@@ -33,7 +35,7 @@ router.get('/list', function (req, res) {
 });
 
 router.get('/metadata/:id', function (req, res) {
-    options.url = 'https://pro-api.coinmarketcap.com/v1/cryptocurrency/info';
+    options.url = BASE_URL + 'info';
     options.qs = {
         'id': +req.params.id
     }
@@ -45,7 +47,7 @@ router.get('/metadata/:id', function (req, res) {
 });
 
 router.get('/quotes/:id', function (req, res) {
-    options.url = 'https://pro-api.coinmarketcap.com/v1/cryptocurrency/quotes/latest';
+    options.url = BASE_URL +'quotes/latest';
     options.qs = {
         'id': +req.params.id
     }
