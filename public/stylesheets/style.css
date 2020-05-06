@@ -1,8 +1,18 @@
 body {
   padding: 50px;
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  background-color: #222222;
+  color: #ffffffad;
+}
+
+h1 {
+  color: white;
 }
 
 a {
-  color: #00B7FF;
+  color: white;
+}
+
+table {
+  margin-top: 50px;
 }

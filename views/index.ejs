@@ -1,11 +1,31 @@
 <!DOCTYPE html>
 <html>
-  <head>
+<head>
     <title><%= title %></title>
-    <link rel='stylesheet' href='/stylesheets/style.css' />
-  </head>
-  <body>
-    <h1><%= title %></h1>
-    <p>Welcome to <%= title %></p>
-  </body>
+    <link rel='stylesheet' href='/stylesheets/style.css'/>
+    <script src="/js/jquery-3.4.1.js"></script>
+    <script src="/js/jquery.mousewheel.min.js"></script>
+    <script src="/js/scripts.js"></script>
+</head>
+<body>
+<h1><%= title %></h1>
+<select id="currency_list">
+    <% result.forEach((data) => { %>
+        <option value="<%= data.id %>"><%= data.name %></option>
+    <% }); %>
+</select>
+<button id="get_resp">Select</button>
+<table border="1">
+    <thead>
+    <tr>
+        <th>Currency</th>
+        <th>Site</th>
+        <th>Description</th>
+        <th>Logo</th>
+        <th>Percent Quote</th>
+    </tr>
+    </thead>
+    <tbody id="tbody"></tbody>
+</table>
+</body>
 </html>
